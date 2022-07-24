@@ -30,6 +30,8 @@ export class AppComponent {
     this.dialog.open(DialogComponent, {
       width: '30%',
       data: null,
+    }).afterClosed().subscribe((res) => {
+      if(res === "save"){this.getAllProducts();}
     });
   }
 
@@ -52,7 +54,17 @@ export class AppComponent {
     this.dialog.open(DialogComponent,{
       width: '30%',
       data: row
+    }).afterClosed().subscribe((res) => {
+      if(res ==="update"){this.getAllProducts();}
     })
+  }
+
+  deleteProduct(id:number){
+    this.api.deleteProduct(id)
+    .subscribe(
+      (res)=> {alert("Product deleted successfully..!!"); this.getAllProducts();},
+      (err) => {alert("Product delete failed..!!");}
+      )
   }
 
 

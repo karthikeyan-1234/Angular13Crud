@@ -46,16 +46,29 @@ export class DialogComponent implements OnInit {
   }
 
   addProduct(){
-    if(this.productForm.valid){
-      this.api.postProduct(this.productForm.value)
-      .subscribe((res) => 
-      {
-        alert("Product Added");
-        this.productForm.reset(); //Resets the form
-        this.dialog.close('save');  //Closes the form and passes the value 'save' to indicate that Save button was clicked
+    if(!this.editData){
+      if(this.productForm.valid){
+        this.api.postProduct(this.productForm.value)
+        .subscribe((res) => 
+        {
+          alert("Product Added");
+          this.productForm.reset(); //Resets the form
+          this.dialog.close('save');  //Closes the form and passes the value 'save' to indicate that Save button was clicked
+        }
+        ,(err) => {alert("Unable to add product");})
       }
-      ,(err) => {alert("Unable to add product");})
     }
+    else
+    {
+      this.updateProduct();
+    }
+  }
+
+  updateProduct(){
+    this.api.putProduct(this.productForm.value,this.editData.id)
+    .subscribe(
+      (res)=> {alert("Product updated successfully..!!"); this.productForm.reset(); this.dialog.close("update");},
+      (err)=> {alert("Unable to update product..!!")})
   }
 
 }
