@@ -51,7 +51,7 @@
               <mat-icon (click)="editProduct(row)">edit</mat-icon>
             </button>
             <button mat-icon-button color="warn">
-              <mat-icon>delete</mat-icon>
+              <mat-icon (click)="deleteProduct(row.id)">delete</mat-icon>
             </button>
           </td>
         </ng-container>
