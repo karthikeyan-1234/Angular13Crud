@@ -1,0 +1,31 @@
+{
+  "productList": [
+    {
+      "productName": "Product1",
+      "category": "Fruits",
+      "freshness": "Brand New",
+      "price": 100,
+      "comment": "Test",
+      "date": "2022-07-23T18:30:00.000Z",
+      "id": 1
+    },
+    {
+      "productName": "Product2",
+      "category": "Vegetables",
+      "freshness": "Second Hand",
+      "price": 150,
+      "comment": "Test 2",
+      "date": "2022-07-09T18:30:00.000Z",
+      "id": 2
+    },
+    {
+      "productName": "Product3",
+      "category": "Electronics",
+      "freshness": "Refurbished",
+      "price": 1000,
+      "comment": "Electronics",
+      "date": "2022-07-04T18:30:00.000Z",
+      "id": 3
+    }
+  ]
+}
