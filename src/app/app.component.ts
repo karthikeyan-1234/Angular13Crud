@@ -60,11 +60,14 @@ export class AppComponent {
   }
 
   deleteProduct(id:number){
+
+    if(confirm("Are you sure..?")){
     this.api.deleteProduct(id)
     .subscribe(
       (res)=> {alert("Product deleted successfully..!!"); this.getAllProducts();},
       (err) => {alert("Product delete failed..!!");}
       )
+    }
   }
 
 
