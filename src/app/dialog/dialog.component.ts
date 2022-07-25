@@ -17,7 +17,7 @@ export class DialogComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder,private api: ApiService,
     private dialog: MatDialogRef<DialogComponent>, //MatDialogRef is used to close the DialogComponent
-    @Inject(MAT_DIALOG_DATA) public editData:any   //To hold the row data when the edit icon is clicked in App Component
+    @Inject(MAT_DIALOG_DATA) public editData:any   //Mat_Dialog_Data to hold the row data when the edit icon is clicked in App Component
     ) 
     { }
 
