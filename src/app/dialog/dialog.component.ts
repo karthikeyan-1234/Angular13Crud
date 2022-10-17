@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { ApiService } from '../services/api.service';
 import { MatDialogRef } from '@angular/material/dialog';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
@@ -12,10 +12,10 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 export class DialogComponent implements OnInit {
 
   freshnessList = ["Brand New","Second Hand","Refurbished"];
-  productForm! : FormGroup;
+  productForm! : UntypedFormGroup;
   actionBtn: string = 'Save';
 
-  constructor(private formBuilder: FormBuilder,private api: ApiService,
+  constructor(private formBuilder: UntypedFormBuilder,private api: ApiService,
     private dialog: MatDialogRef<DialogComponent>, //MatDialogRef is used to close the DialogComponent
     @Inject(MAT_DIALOG_DATA) public editData:any   //Mat_Dialog_Data to hold the row data when the edit icon is clicked in App Component
     ) 
